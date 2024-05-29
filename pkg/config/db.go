@@ -10,8 +10,9 @@ import (
 
 var DB *sql.DB
 
-func InitDB() {
-	connStr := "user=price dbname=todoapp sslmode=disable password=123456"
+func InitDB() *sql.DB {
+	// TODO make connStr able to be changed
+	connStr := "host=localhost port=5432 user=postgres dbname=postgres sslmode=prefer password=123456"
 	var err error
 	DB, err = sql.Open("postgres", connStr)
 	if err != nil {
@@ -20,10 +21,12 @@ func InitDB() {
 		fmt.Println("Database connected")
 	}
 
-	TableInit()
+	TableInit(DB)
+
+	return DB
 }
 
-func TableInit() {
+func TableInit(DB *sql.DB) {
 	query := `
 	CREATE TABLE IF NOT EXISTS todolist (
 		id SERIAL PRIMARY KEY,
