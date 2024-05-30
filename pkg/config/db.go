@@ -10,7 +10,7 @@ import (
 
 var DB *sql.DB
 
-func InitDB() *sql.DB {
+func InitDB() {
 	// TODO make connStr able to be changed
 	connStr := "host=localhost port=5432 user=postgres dbname=postgres sslmode=prefer password=123456"
 	var err error
@@ -22,8 +22,6 @@ func InitDB() *sql.DB {
 	}
 
 	TableInit(DB)
-
-	return DB
 }
 
 func TableInit(DB *sql.DB) {
@@ -32,7 +30,7 @@ func TableInit(DB *sql.DB) {
 		id SERIAL PRIMARY KEY,
 		title VARCHAR(255) NOT NULL,
 		content TEXT,
-		status BOOLEAN NOT FULL DEFAULT FALSE
+		status BOOLEAN NOT NULL DEFAULT FALSE
 	);
 	`
 	_, err := DB.Exec(query)
