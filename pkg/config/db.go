@@ -12,7 +12,7 @@ var DB *sql.DB
 
 func InitDB() {
 	// TODO make connStr able to be changed
-	connStr := "host=localhost port=5432 user=postgres dbname=postgres sslmode=prefer password=123456"
+	connStr := "host=localhost port=5432 user=postgres dbname=postgres sslmode=disable password=123456"
 	var err error
 	DB, err = sql.Open("postgres", connStr)
 	if err != nil {
@@ -21,10 +21,10 @@ func InitDB() {
 		fmt.Println("Database connected")
 	}
 
-	TableInit(DB)
+	TableInit()
 }
 
-func TableInit(DB *sql.DB) {
+func TableInit() {
 	query := `
 	CREATE TABLE IF NOT EXISTS todolist (
 		id SERIAL PRIMARY KEY,
