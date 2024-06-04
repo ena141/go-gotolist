@@ -1,9 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"github.com/ena141/go-gotolist/pkg/config"
+	"github.com/ena141/go-gotolist/pkg/routes"
 )
 
 func main() {
-	fmt.Print(1, "123")
+	config.InitDB()
+
+	router := routes.InitRoutes()
+
+	router.Run(":8080")
 }
