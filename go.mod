@@ -1,4 +1,4 @@
-module github.com/ena141/go-gotolist
+module github.com/ena141/go-todolist
 
 go 1.21
 
