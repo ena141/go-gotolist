@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ena141/go-gotolist/pkg/config"
-	"github.com/ena141/go-gotolist/pkg/models"
+	"github.com/ena141/go-todolist/pkg/config"
+	"github.com/ena141/go-todolist/pkg/models"
 	"github.com/gin-gonic/gin"
 )
 

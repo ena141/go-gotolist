@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/ena141/go-gotolist/pkg/config"
-	"github.com/ena141/go-gotolist/pkg/routes"
+	"github.com/ena141/go-todolist/pkg/config"
+	"github.com/ena141/go-todolist/pkg/routes"
 )
 
 func main() {

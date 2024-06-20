@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/ena141/go-gotolist/pkg/controllers"
+	"github.com/ena141/go-todolist/pkg/controllers"
 
 	"github.com/gin-gonic/gin"
 )
